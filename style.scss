@@ -1,0 +1,301 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  color: white;
+  height: 100%;
+  background: url("assets/images/pattern-lines.svg") no-repeat top/cover,
+    url("assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg")
+      no-repeat bottom left/250px auto,
+    url("assets/images/pattern-squiggly-line-top.svg") no-repeat top right/100px
+      auto,
+    url("assets/images/pattern-circle.svg") no-repeat top left/80px auto,
+    url("assets/images/background-mobile.png") no-repeat center/cover;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@font-face {
+  font-family: fontBody;
+  src: url("assets/fonts/Inconsolata-VariableFont_wdth,wght.ttf");
+}
+
+$Neutral0: hsl(0, 0%, 100%);
+$Neutral300: hsl(252, 6%, 83%);
+$Neutral500: hsl(245, 15%, 58%);
+$Neutral700: hsl(245, 19%, 35%);
+$Neutral900: hsl(248, 70%, 10%);
+
+$Orange500: hsl(7, 88%, 67%);
+$Orange700: hsl(7, 71%, 60%);
+
+$Gradient: hsl(7, 86%, 67%) to hsl(0, 0%, 100%);
+main {
+  max-width: 100%;
+  height: 100%;
+  padding: 2em 1em;
+  font-family: fontBody;
+
+  #main-img {
+    width: min(160px, 50%);
+    display: block;
+    margin: 0 auto 1.5em;
+  }
+}
+
+#hd-section {
+  text-align: center;
+  margin: 0.6em auto 1.5em;
+  h3 {
+    font: 700 2rem fontBody;
+    margin-bottom: 0.25em;
+  }
+  p {
+    font: 500 1.2rem fontBody;
+    color: $Neutral300;
+  }
+}
+
+form {
+  margin: 0 auto;
+  max-width: 80%;
+  height: auto;
+  & > * {
+    display: block;
+  }
+  label {
+    width: 100%;
+    font: 300 1.3rem fontBody;
+    h4 {
+      margin-bottom: 0.2em;
+    }
+    .err {
+      display: flex;
+      align-items: center;
+      gap: 0.7em;
+      color: $Orange700;
+      font: 500 0.7em fontBody;
+      margin-bottom: 0.3em;
+    }
+  }
+  input {
+    padding: 1em;
+    border: 1px solid $Neutral500;
+    width: 100%;
+    border-radius: 0.8em;
+    background-color: hsl(245, 19%, 35%, 0.2);
+    backdrop-filter: 5px;
+    margin: 0.6em auto 1em;
+    color: $Neutral0;
+    &:hover {
+      cursor: pointer;
+      background-color: hsl(245, 19%, 35%);
+    }
+  }
+  #submit {
+    color: $Neutral900;
+    border: none;
+    background-color: $Orange700;
+    font: 900 1rem fontBody;
+  }
+  section {
+    margin-bottom: 1em;
+  }
+  #upload-label {
+    margin-top: 0.5em;
+    padding: 1em;
+    border: 2px dashed $Neutral500;
+    border-radius: 0.4em;
+    background-color: hsla(252, 6%, 83%, 0.2);
+    backdrop-filter: 5px;
+    &:hover {
+      cursor: pointer;
+      background-color: hsl(245, 19%, 35%, 0.7);
+    }
+    #upload {
+      display: none;
+    }
+    #input-desc {
+      font: 300 0.8em fontBody;
+      text-align: center;
+    }
+  }
+  #upload-img-container {
+    border: 2px solid $Neutral700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    border-radius: 0.8em;
+    width: 2.2em;
+    height: 2.2em;
+    #upload-icon {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      border-radius: 0.8em;
+    }
+  }
+  #input-desc {
+    margin: 0.5em auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.6em;
+    .img-btn {
+      border: none;
+      border-radius: 0.3em;
+      padding: 0.4em;
+      font: 500 0.95rem fontBody;
+      color: $Neutral300;
+      background-color: hsla(252, 15%, 58%, 0.2);
+      backdrop-filter: 5px;
+      &:hover {
+        text-decoration: underline;
+        text-underline-offset: 2.5px;
+      }
+    }
+  }
+  .error-msg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6em;
+    font: 500 1em fontBody;
+    color: $Neutral300;
+    margin-top: 0.6em;
+  }
+}
+
+//Ticket section styling
+.gradient-hd {
+  margin-top: 1.2em;
+  #gradient-text {
+    background: linear-gradient(45deg, $Orange500, $Neutral0);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.about {
+  margin: 1.2em auto 4em;
+  font-weight: 300;
+}
+
+#email-text {
+  color: $Orange500;
+}
+//Ticket section styling
+.ticket-section {
+  margin-bottom: 10em;
+  position: relative;
+  #ticket-img {
+    width: 100%;
+    height: fit-content;
+    margin: 0 auto;
+  }
+  .ticket-hd {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7em;
+    left: 1em;
+    top: 0.8em;
+    span {
+      font: 700 1.5rem fontBody;
+    }
+  }
+  #date {
+    position: absolute;
+    font: 300 0.8rem fontBody;
+    color: $Neutral300;
+    top: 3.8em;
+    left: 4.2em;
+  }
+}
+
+.user-info {
+  position: absolute;
+  bottom: 1em;
+  left: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6em;
+  #ticket-avatar {
+    object-fit: cover;
+    max-width: 5em;
+    max-height: 5em;
+    border-radius: 0.4em;
+  }
+}
+#info-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.2em;
+  #github-info {
+    display: flex;
+    justify-content: flex-start;
+    gap: 0.5em;
+    align-items: center;
+    font: 300 0.8rem fontBody;
+    color: $Neutral300;
+  }
+}
+
+#random-num {
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+  right: -5%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(90deg);
+  font: 300 clamp(1rem, 1.8rem, 2.6rem) fontBody;
+  color: $Neutral500;
+}
+
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+  body {
+    background: url("assets/images/pattern-lines.svg") no-repeat center/cover,
+      url("assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg")
+        no-repeat bottom left/300px auto,
+      url("assets/images/pattern-squiggly-line-top.svg") no-repeat top
+        right/120px auto,
+      url("assets/images/pattern-circle.svg") no-repeat top left/100px auto,
+      url("assets/images/background-tablet.png") no-repeat center/cover;
+  }
+  .ticket-section {
+    #ticket {
+      max-width: 80%;
+    }
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  body {
+    background: url("assets/images/pattern-lines.svg") no-repeat center/cover,
+      url("assets/images/pattern-squiggly-line-bottom-desktop.svg") no-repeat
+        bottom left/350px auto,
+      url("assets/images/pattern-squiggly-line-top.svg") no-repeat top
+        right/250px auto,
+      url("assets/images/pattern-circle.svg") no-repeat top left/100px auto,
+      url("assets/images/background-desktop.png") no-repeat center/cover;
+  }
+  .ticket-section {
+    #ticket {
+      max-width: 80%;
+    }
+  }
+}
