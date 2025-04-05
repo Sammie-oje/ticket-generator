@@ -29,8 +29,6 @@ function validateInputs(e) {
   if (nameValid && emailValid && userNameValid) {
     generateTicket();
   } else {
-    const labels = document.querySelectorAll(".label");
-
     const errorValue = () => {
       if (!nameValid) {
         const nameErr = document.querySelector("#nameErr");
@@ -52,18 +50,6 @@ function validateInputs(e) {
       }
     };
     errorValue();
-
-    /*     if (hasRun) {
-      labels.forEach((label) => {
-        const errorPar = document.createElement("p");
-        errorPar.innerHTML = `
-
-          `;
-        errorPar.classList.add("error-par");
-        label.appendChild(errorPar);
-      });
-      hasRun = false;
-    } */
   }
 }
 
@@ -121,11 +107,13 @@ const validateFileSize = (file) => {
 
       updateDesc();
     } else {
-      console.log("Image size is invalid");
-
       const errorMsg = document.querySelector(".error-msg");
 
-      errorMsg.style.color = "hsl(7, 71%, 60%)";
+      errorMsg.innerHTML = `
+      <img src="assets/images/icon-info2.svg" alt="error">
+      <span>File too large. Please upload a photo under 500KB.
+      `;
+      errorMsg.style.color = "hsl(7, 88%, 67%)";
 
       return;
     }

@@ -7,7 +7,7 @@
 body {
   color: white;
   height: 100%;
-  background: url("assets/images/pattern-lines.svg") no-repeat top/cover, url("assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg") no-repeat bottom left/250px auto, url("assets/images/pattern-squiggly-line-top.svg") no-repeat top right/100px auto, url("assets/images/pattern-circle.svg") no-repeat top left/80px auto, url("assets/images/background-mobile.png") no-repeat center/cover;
+  background: url("assets/images/pattern-lines.svg") no-repeat top/cover, url("assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg") no-repeat bottom left/250px auto, url("assets/images/pattern-squiggly-line-top.svg") no-repeat top right/100px auto, url("assets/images/pattern-circle.svg") no-repeat top left/100px auto, url("assets/images/pattern-circle.svg") no-repeat center right/100px auto, url("assets/images/background-mobile.png") no-repeat center/cover;
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -43,6 +43,15 @@ main #main-img {
   color: hsl(252, 6%, 83%);
 }
 
+form .error-msg, form label .err {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.7em;
+  font: 500 0.9rem fontBody;
+  margin: 1em auto 0;
+}
+
 form {
   margin: 0 auto;
   max-width: 80%;
@@ -53,18 +62,14 @@ form > * {
 }
 form label {
   width: 100%;
-  font: 300 1.3rem fontBody;
+  margin-bottom: 1.4em;
 }
 form label h4 {
-  margin-bottom: 0.2em;
+  font: 500 1.2rem fontBody;
+  margin-bottom: 0.1em;
 }
 form label .err {
-  display: flex;
-  align-items: center;
-  gap: 0.7em;
   color: hsl(7, 71%, 60%);
-  font: 500 0.7em fontBody;
-  margin-bottom: 0.3em;
 }
 form input {
   padding: 1em;
@@ -74,7 +79,7 @@ form input {
   background-color: hsla(245, 19%, 35%, 0.2);
   -webkit-backdrop-filter: 5px;
           backdrop-filter: 5px;
-  margin: 0.6em auto 1em;
+  margin: 0.6em auto 0;
   color: hsl(0, 0%, 100%);
 }
 form input:hover {
@@ -85,7 +90,7 @@ form #submit {
   color: hsl(248, 70%, 10%);
   border: none;
   background-color: hsl(7, 71%, 60%);
-  font: 900 1rem fontBody;
+  font: 900 1.2rem fontBody;
 }
 form section {
   margin-bottom: 1em;
@@ -107,7 +112,8 @@ form #upload-label #upload {
   display: none;
 }
 form #upload-label #input-desc {
-  font: 300 0.8em fontBody;
+  font: 400 1.1rem fontBody;
+  color: hsl(252, 6%, 83%);
   text-align: center;
 }
 form #upload-img-container {
@@ -117,15 +123,16 @@ form #upload-img-container {
   justify-content: center;
   margin: 0 auto;
   border-radius: 0.8em;
-  width: 2.2em;
-  height: 2.2em;
+  width: 2.8em;
+  height: 2.8em;
+  background-color: hsl(245, 19%, 35%);
 }
 form #upload-img-container #upload-icon {
   -o-object-fit: cover;
      object-fit: cover;
-  width: 100%;
-  height: 100%;
-  border-radius: 0.8em;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 1em;
 }
 form #input-desc {
   margin: 0.5em auto 0;
@@ -150,13 +157,7 @@ form #input-desc .img-btn:hover {
   text-underline-offset: 2.5px;
 }
 form .error-msg {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6em;
-  font: 500 1em fontBody;
-  color: hsl(252, 6%, 83%);
-  margin-top: 0.6em;
+  color: hsl(245, 15%, 58%);
 }
 
 .gradient-hd {
@@ -245,7 +246,7 @@ form .error-msg {
   position: absolute;
   top: 50%;
   bottom: 50%;
-  right: -5%;
+  right: -3%;
   transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
@@ -257,7 +258,7 @@ form .error-msg {
 
 @media only screen and (min-width: 600px) and (max-width: 900px) {
   body {
-    background: url("assets/images/pattern-lines.svg") no-repeat center/cover, url("assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg") no-repeat bottom left/300px auto, url("assets/images/pattern-squiggly-line-top.svg") no-repeat top right/120px auto, url("assets/images/pattern-circle.svg") no-repeat top left/100px auto, url("assets/images/background-tablet.png") no-repeat center/cover;
+    background: url("assets/images/pattern-lines.svg") no-repeat center/cover, url("assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg") no-repeat bottom left/300px auto, url("assets/images/pattern-squiggly-line-top.svg") no-repeat top right/180px auto, url("assets/images/pattern-circle.svg") no-repeat top left/150px auto, url("assets/images/pattern-circle.svg") no-repeat center right/150px auto, url("assets/images/background-tablet.png") no-repeat center/cover;
   }
   .ticket-section #ticket {
     max-width: 80%;
@@ -265,7 +266,7 @@ form .error-msg {
 }
 @media only screen and (min-width: 900px) {
   body {
-    background: url("assets/images/pattern-lines.svg") no-repeat center/cover, url("assets/images/pattern-squiggly-line-bottom-desktop.svg") no-repeat bottom left/350px auto, url("assets/images/pattern-squiggly-line-top.svg") no-repeat top right/250px auto, url("assets/images/pattern-circle.svg") no-repeat top left/100px auto, url("assets/images/background-desktop.png") no-repeat center/cover;
+    background: url("assets/images/pattern-lines.svg") no-repeat center/cover, url("assets/images/pattern-squiggly-line-bottom-desktop.svg") no-repeat bottom left/400px auto, url("assets/images/pattern-squiggly-line-top.svg") no-repeat top right/250px auto, url("assets/images/pattern-circle.svg") no-repeat top left/200px auto, url("assets/images/pattern-circle.svg") no-repeat center right/200px auto, url("assets/images/background-desktop.png") no-repeat center/cover;
   }
   .ticket-section #ticket {
     max-width: 80%;
