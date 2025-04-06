@@ -1,41 +1,37 @@
+@import "_variables.scss";
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
+@mixin displayFlex($justifyContent: center, $alignItems: center) {
+  display: flex;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+}
+
 body {
   color: white;
   height: 100%;
-  background: url("assets/images/pattern-lines.svg") no-repeat top/cover,
-    url("assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg")
+  background: url("/assets/images/pattern-lines.svg") no-repeat top/cover,
+    url("/assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg")
       no-repeat bottom left/250px auto,
-    url("assets/images/pattern-squiggly-line-top.svg") no-repeat top right/100px
-      auto,
-    url("assets/images/pattern-circle.svg") no-repeat top left/100px auto,
-    url("assets/images/pattern-circle.svg") no-repeat center right/100px auto,
-    url("assets/images/background-mobile.png") no-repeat center/cover;
-  display: flex;
+    url("/assets/images/pattern-squiggly-line-top.svg") no-repeat top
+      right/100px auto,
+    url("/assets/images/pattern-circle.svg") no-repeat top left/100px auto,
+    url("/assets/images/pattern-circle.svg") no-repeat center right/100px auto,
+    url("/assets/images/background-mobile.png") no-repeat center/cover;
+  @include displayFlex;
   flex-flow: column;
-  align-items: center;
-  justify-content: center;
 }
 
 @font-face {
   font-family: fontBody;
-  src: url("assets/fonts/Inconsolata-VariableFont_wdth,wght.ttf");
+  src: url("/assets/fonts/Inconsolata-VariableFont_wdth,wght.ttf");
 }
 
-$Neutral0: hsl(0, 0%, 100%);
-$Neutral300: hsl(252, 6%, 83%);
-$Neutral500: hsl(245, 15%, 58%);
-$Neutral700: hsl(245, 19%, 35%);
-$Neutral900: hsl(248, 70%, 10%);
-
-$Orange500: hsl(7, 88%, 67%);
-$Orange700: hsl(7, 71%, 60%);
-
-$Gradient: hsl(7, 86%, 67%) to hsl(0, 0%, 100%);
 main {
   max-width: 100%;
   height: 100%;
@@ -64,9 +60,7 @@ main {
 
 //error placeholder style
 %error {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  @include displayFlex($justifyContent: flex-start);
   gap: 0.7em;
   font: 500 0.9rem fontBody;
   margin: 1em auto 0;
@@ -136,9 +130,7 @@ form {
   }
   #upload-img-container {
     border: 2px solid $Neutral700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include displayFlex;
     margin: 0 auto;
     border-radius: 0.8em;
     width: 2.8em;
@@ -148,14 +140,11 @@ form {
       object-fit: cover;
       max-width: 100%;
       max-height: 100%;
-      border-radius: 1em;
     }
   }
   #input-desc {
     margin: 0.5em auto 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include displayFlex;
     flex-wrap: wrap;
     gap: 0.6em;
     .img-btn {
@@ -207,9 +196,7 @@ form {
   }
   .ticket-hd {
     position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include displayFlex;
     gap: 0.7em;
     left: 1em;
     top: 0.8em;
@@ -230,9 +217,7 @@ form {
   position: absolute;
   bottom: 1em;
   left: 1em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include displayFlex;
   gap: 0.6em;
   #ticket-avatar {
     object-fit: cover;
@@ -242,16 +227,12 @@ form {
   }
 }
 #info-wrapper {
-  display: flex;
+  @include displayFlex($alignItems: flex-start);
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
   gap: 0.2em;
   #github-info {
-    display: flex;
-    justify-content: flex-start;
+    @include displayFlex($justifyContent: flex-start);
     gap: 0.5em;
-    align-items: center;
     font: 300 0.8rem fontBody;
     color: $Neutral300;
   }
@@ -263,9 +244,7 @@ form {
   bottom: 50%;
   right: -3%;
   transform: translate(-50%, -50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include displayFlex;
   transform: rotate(90deg);
   font: 300 clamp(1rem, 1.8rem, 2.6rem) fontBody;
   color: $Neutral500;
@@ -273,14 +252,14 @@ form {
 
 @media only screen and (min-width: 600px) and (max-width: 900px) {
   body {
-    background: url("assets/images/pattern-lines.svg") no-repeat center/cover,
-      url("assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg")
+    background: url("/assets/images/pattern-lines.svg") no-repeat center/cover,
+      url("/assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg")
         no-repeat bottom left/300px auto,
-      url("assets/images/pattern-squiggly-line-top.svg") no-repeat top
+      url("/assets/images/pattern-squiggly-line-top.svg") no-repeat top
         right/180px auto,
-      url("assets/images/pattern-circle.svg") no-repeat top left/150px auto,
-      url("assets/images/pattern-circle.svg") no-repeat center right/150px auto,
-      url("assets/images/background-tablet.png") no-repeat center/cover;
+      url("/assets/images/pattern-circle.svg") no-repeat top left/150px auto,
+      url("/assets/images/pattern-circle.svg") no-repeat center right/150px auto,
+      url("/assets/images/background-tablet.png") no-repeat center/cover;
   }
   .ticket-section {
     #ticket {
@@ -291,14 +270,14 @@ form {
 
 @media only screen and (min-width: 900px) {
   body {
-    background: url("assets/images/pattern-lines.svg") no-repeat center/cover,
-      url("assets/images/pattern-squiggly-line-bottom-desktop.svg") no-repeat
+    background: url("/assets/images/pattern-lines.svg") no-repeat center/cover,
+      url("/assets/images/pattern-squiggly-line-bottom-desktop.svg") no-repeat
         bottom left/400px auto,
-      url("assets/images/pattern-squiggly-line-top.svg") no-repeat top
+      url("/assets/images/pattern-squiggly-line-top.svg") no-repeat top
         right/250px auto,
-      url("assets/images/pattern-circle.svg") no-repeat top left/200px auto,
-      url("assets/images/pattern-circle.svg") no-repeat center right/200px auto,
-      url("assets/images/background-desktop.png") no-repeat center/cover;
+      url("/assets/images/pattern-circle.svg") no-repeat top left/200px auto,
+      url("/assets/images/pattern-circle.svg") no-repeat center right/200px auto,
+      url("/assets/images/background-desktop.png") no-repeat center/cover;
   }
   .ticket-section {
     #ticket {

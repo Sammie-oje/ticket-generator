@@ -5,8 +5,6 @@ const userName = document.querySelector("#username");
 const fileInput = document.querySelector("#upload");
 const dropZone = document.querySelector("#upload-img-container");
 
-const maxSize = 500 * 1024;
-
 let hasRun = true;
 
 submitButton.addEventListener("click", validateInputs);
@@ -36,17 +34,20 @@ function validateInputs(e) {
           <img src="assets/images/icon-info2.svg" alt="error">
           <span>Enter a valid name</span>
         `;
+        nameInput.style.border = "1px solid hsl(7, 71%, 60%)";
       } else if (!emailValid) {
         const emailErr = document.querySelector("#emailErr");
         emailErr.innerHTML = `
           <img src="assets/images/icon-info2.svg" alt="error">
           <span>Enter a valid email address</span>`;
+        email.style.border = "1px solid hsl(7, 71%, 60%)";
       } else if (!userNameValid) {
         const userErr = document.querySelector("#userErr");
         userErr.innerHTML = `
           <img src="assets/images/icon-info2.svg" alt="error">
           <span>Enter a valid user name</span>
           `;
+        userName.style.border = "1px solid hsl(7, 71%, 60%)";
       }
     };
     errorValue();
@@ -79,6 +80,7 @@ fileInput.addEventListener("change", (event) => {
 });
 
 const validateFileSize = (file) => {
+  const maxSize = 500 * 1024; // 500KB in bytes
   if (file) {
     const fileSize = file.size;
     console.log(fileSize);
@@ -119,32 +121,6 @@ const validateFileSize = (file) => {
     }
   }
 };
-
-//Drag and drop feature
-/* ["dragenter", "dragover", "dragleave", "drop"].forEach((eventName) => {
-  dropZone.addEventListener(eventName, (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-  });
-});
-
-dropZone.addEventListener("drop", (e) => {
-  const dt = e.dataTransfer;
-  const files = dt.files;
-  if (files.length > 0) {
-    const uploadedFile = files[0];
-    const newFileList = new DataTransfer();
-    newFileList.files.add(uploadedFile);
-
-    fileInput.files = newFileList.files;
-
-    validateFileSize(uploadedFile);
-  }
-});
-
-dropZone.addEventListener("click", () => {
-  fileInput.click();
-}); */
 
 function generateTicket() {
   const inputValue = nameInput.value;

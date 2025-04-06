@@ -7,16 +7,16 @@
 body {
   color: white;
   height: 100%;
-  background: url("assets/images/pattern-lines.svg") no-repeat top/cover, url("assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg") no-repeat bottom left/250px auto, url("assets/images/pattern-squiggly-line-top.svg") no-repeat top right/100px auto, url("assets/images/pattern-circle.svg") no-repeat top left/100px auto, url("assets/images/pattern-circle.svg") no-repeat center right/100px auto, url("assets/images/background-mobile.png") no-repeat center/cover;
+  background: url("/assets/images/pattern-lines.svg") no-repeat top/cover, url("/assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg") no-repeat bottom left/250px auto, url("/assets/images/pattern-squiggly-line-top.svg") no-repeat top right/100px auto, url("/assets/images/pattern-circle.svg") no-repeat top left/100px auto, url("/assets/images/pattern-circle.svg") no-repeat center right/100px auto, url("/assets/images/background-mobile.png") no-repeat center/cover;
   display: flex;
-  flex-flow: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  flex-flow: column;
 }
 
 @font-face {
   font-family: fontBody;
-  src: url("assets/fonts/Inconsolata-VariableFont_wdth,wght.ttf");
+  src: url("/assets/fonts/Inconsolata-VariableFont_wdth,wght.ttf");
 }
 main {
   max-width: 100%;
@@ -45,8 +45,8 @@ main #main-img {
 
 form .error-msg, form label .err {
   display: flex;
-  align-items: center;
   justify-content: flex-start;
+  align-items: center;
   gap: 0.7em;
   font: 500 0.9rem fontBody;
   margin: 1em auto 0;
@@ -119,8 +119,8 @@ form #upload-label #input-desc {
 form #upload-img-container {
   border: 2px solid hsl(245, 19%, 35%);
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   margin: 0 auto;
   border-radius: 0.8em;
   width: 2.8em;
@@ -132,13 +132,12 @@ form #upload-img-container #upload-icon {
      object-fit: cover;
   max-width: 100%;
   max-height: 100%;
-  border-radius: 1em;
 }
 form #input-desc {
   margin: 0.5em auto 0;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   gap: 0.6em;
 }
@@ -192,8 +191,8 @@ form .error-msg {
 .ticket-section .ticket-hd {
   position: absolute;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   gap: 0.7em;
   left: 1em;
   top: 0.8em;
@@ -228,16 +227,16 @@ form .error-msg {
 
 #info-wrapper {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  flex-direction: column;
   gap: 0.2em;
 }
 #info-wrapper #github-info {
   display: flex;
   justify-content: flex-start;
-  gap: 0.5em;
   align-items: center;
+  gap: 0.5em;
   font: 300 0.8rem fontBody;
   color: hsl(252, 6%, 83%);
 }
@@ -249,8 +248,8 @@ form .error-msg {
   right: -3%;
   transform: translate(-50%, -50%);
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   transform: rotate(90deg);
   font: 300 1.8rem fontBody;
   color: hsl(245, 15%, 58%);
@@ -258,7 +257,7 @@ form .error-msg {
 
 @media only screen and (min-width: 600px) and (max-width: 900px) {
   body {
-    background: url("assets/images/pattern-lines.svg") no-repeat center/cover, url("assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg") no-repeat bottom left/300px auto, url("assets/images/pattern-squiggly-line-top.svg") no-repeat top right/180px auto, url("assets/images/pattern-circle.svg") no-repeat top left/150px auto, url("assets/images/pattern-circle.svg") no-repeat center right/150px auto, url("assets/images/background-tablet.png") no-repeat center/cover;
+    background: url("/assets/images/pattern-lines.svg") no-repeat center/cover, url("/assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg") no-repeat bottom left/300px auto, url("/assets/images/pattern-squiggly-line-top.svg") no-repeat top right/180px auto, url("/assets/images/pattern-circle.svg") no-repeat top left/150px auto, url("/assets/images/pattern-circle.svg") no-repeat center right/150px auto, url("/assets/images/background-tablet.png") no-repeat center/cover;
   }
   .ticket-section #ticket {
     max-width: 80%;
@@ -266,7 +265,7 @@ form .error-msg {
 }
 @media only screen and (min-width: 900px) {
   body {
-    background: url("assets/images/pattern-lines.svg") no-repeat center/cover, url("assets/images/pattern-squiggly-line-bottom-desktop.svg") no-repeat bottom left/400px auto, url("assets/images/pattern-squiggly-line-top.svg") no-repeat top right/250px auto, url("assets/images/pattern-circle.svg") no-repeat top left/200px auto, url("assets/images/pattern-circle.svg") no-repeat center right/200px auto, url("assets/images/background-desktop.png") no-repeat center/cover;
+    background: url("/assets/images/pattern-lines.svg") no-repeat center/cover, url("/assets/images/pattern-squiggly-line-bottom-desktop.svg") no-repeat bottom left/400px auto, url("/assets/images/pattern-squiggly-line-top.svg") no-repeat top right/250px auto, url("/assets/images/pattern-circle.svg") no-repeat top left/200px auto, url("/assets/images/pattern-circle.svg") no-repeat center right/200px auto, url("/assets/images/background-desktop.png") no-repeat center/cover;
   }
   .ticket-section #ticket {
     max-width: 80%;
