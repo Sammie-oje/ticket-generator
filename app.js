@@ -67,6 +67,7 @@ document.addEventListener("click", (e) => {
     fileInput.value = "";
 
     const uploadIcon = document.querySelector("#upload-icon");
+    URL.revokeObjectURL(uploadIcon.src);
     uploadIcon.src = "assets/images/icon-upload.svg";
 
     const desc = document.getElementById("input-desc");
@@ -74,27 +75,19 @@ document.addEventListener("click", (e) => {
   }
 });
 
-fileInput.addEventListener("change", (event) => {
-  const file = event.target.files[0];
-  validateFileSize(file);
-});
+const handleFile = (file) => {
+  const uploadIcon = document.querySelector("#upload-icon");
+  const imageUrl = URL.createObjectURL(file);
+  uploadIcon.src = imageUrl;
+};
 
 const validateFileSize = (file) => {
+  const errorMsg = document.querySelector(".error-msg");
   const maxSize = 500 * 1024; // 500KB in bytes
   if (file) {
     const fileSize = file.size;
-    console.log(fileSize);
     if (fileSize <= maxSize) {
-      console.log("Image size is valid");
-
-      const uploadIcon = document.querySelector("#upload-icon");
-      const reader = new FileReader();
-      reader.onload = function renderImg(e) {
-        uploadIcon.src = "";
-        uploadIcon.src = e.target.result;
-      };
-      reader.readAsDataURL(file);
-
+      handleFile(file);
       const desc = document.getElementById("input-desc");
       function updateDesc() {
         desc.innerHTML = "";
@@ -104,13 +97,14 @@ const validateFileSize = (file) => {
         `;
       }
 
-      const errorMsg = document.querySelector(".error-msg");
-      errorMsg.style.color = "white";
+      errorMsg.innerHTML = `
+      <img src="assets/images/icon-info.svg" alt="error">
+      <span>Upload your photo (JPG or PNG, max size: 500KB).</span>
+      `;
+      errorMsg.style.color = "hsl(245, 15%, 58%)";
 
       updateDesc();
     } else {
-      const errorMsg = document.querySelector(".error-msg");
-
       errorMsg.innerHTML = `
       <img src="assets/images/icon-info2.svg" alt="error">
       <span>File too large. Please upload a photo under 500KB.
@@ -121,6 +115,26 @@ const validateFileSize = (file) => {
     }
   }
 };
+
+//Drag and drop feature
+dropZone.addEventListener("dragover", (e) => {
+  e.preventDefault();
+});
+
+dropZone.addEventListener("dragleave", (e) => {
+  e.preventDefault();
+});
+
+dropZone.addEventListener("drop", (e) => {
+  e.preventDefault();
+  const file = e.dataTransfer.files[0];
+  validateFileSize(file);
+});
+
+fileInput.addEventListener("change", (event) => {
+  const file = event.target.files[0];
+  validateFileSize(file);
+});
 
 function generateTicket() {
   const inputValue = nameInput.value;
