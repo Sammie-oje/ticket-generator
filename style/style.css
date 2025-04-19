@@ -4,6 +4,10 @@
   margin: 0;
 }
 
+@font-face {
+  font-family: fontBody;
+  src: url("/assets/fonts/Inconsolata-VariableFont_wdth,wght.ttf");
+}
 body {
   color: white;
   background: url("/assets/images/pattern-lines.svg") fixed no-repeat top/cover, url("/assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg") fixed no-repeat bottom left/250px auto, url("/assets/images/pattern-squiggly-line-top.svg") fixed no-repeat top right/100px auto, url("/assets/images/pattern-circle.svg") fixed no-repeat top left/100px auto, url("/assets/images/pattern-circle.svg") fixed no-repeat center right/100px auto, url("/assets/images/background-mobile.png") fixed no-repeat center/cover;
@@ -12,10 +16,6 @@ body {
   align-items: center;
 }
 
-@font-face {
-  font-family: fontBody;
-  src: url("/assets/fonts/Inconsolata-VariableFont_wdth,wght.ttf");
-}
 main {
   max-width: 100%;
   padding: 2em 1em;

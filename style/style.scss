@@ -1,4 +1,4 @@
-@import "_variables.scss";
+@import "_variables";
 
 * {
   box-sizing: border-box;
@@ -10,6 +10,11 @@
   display: flex;
   justify-content: $justifyContent;
   align-items: $alignItems;
+}
+
+@font-face {
+  font-family: fontBody;
+  src: url("/assets/fonts/Inconsolata-VariableFont_wdth,wght.ttf");
 }
 
 body {
@@ -26,16 +31,10 @@ body {
   @include displayFlex;
 }
 
-@font-face {
-  font-family: fontBody;
-  src: url("/assets/fonts/Inconsolata-VariableFont_wdth,wght.ttf");
-}
-
 main {
   max-width: 100%;
   padding: 2em 1em;
   font-family: fontBody;
-
   #main-img {
     width: min(160px, 50%);
     display: block;
