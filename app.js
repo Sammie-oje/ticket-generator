@@ -12,15 +12,15 @@ submitButton.addEventListener("click", validateInputs);
 function validateInputs(e) {
   e.preventDefault();
 
-  const inputValue = nameInput.value;
+  const inputValue = nameInput.value.trim();
   const regex = /^[A-Za-z]+(\s[A-Za-z]+)+$/;
   const nameValid = regex.test(inputValue);
 
-  const emailValue = email.value;
+  const emailValue = email.value.trim();
   const emailRegex = /^[A-Za-z0-9-_]+@[A-Za-z]+\.[A-Za-z]{2,}$/i;
   const emailValid = emailRegex.test(emailValue);
 
-  const userNameValue = userName.value;
+  const userNameValue = userName.value.trim;
   const userRegex = /^@[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*$/;
   const userNameValid = userRegex.test(userNameValue);
 
