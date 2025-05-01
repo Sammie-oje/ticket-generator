@@ -20,7 +20,7 @@ function validateInputs(e) {
   const emailRegex = /^[A-Za-z0-9-_]+@[A-Za-z]+\.[A-Za-z]{2,}$/i;
   const emailValid = emailRegex.test(emailValue);
 
-  const userNameValue = userName.value.trim;
+  const userNameValue = userName.value.trim();
   const userRegex = /^@[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*$/;
   const userNameValid = userRegex.test(userNameValue);
 
