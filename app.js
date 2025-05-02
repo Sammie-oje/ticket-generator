@@ -236,7 +236,10 @@ function generateTicket() {
             </div>
           </div>
         <span id="random-num">#${randomNumbers}</span>
-
       </section>
+      <button>
+       <img src="/assets/images/download.svg">
+       <span>Download</span>
+      </button>
     `;
 }

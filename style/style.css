@@ -44,7 +44,7 @@ form .error-msg, form label .err {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 0.7em;
+  gap: 0.7em; 
   font: 500 0.9rem fontBody;
   margin: 1em auto 0;
 }
