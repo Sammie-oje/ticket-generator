@@ -96,7 +96,7 @@ form {
       background-color: hsl(245, 19%, 35%);
     }
   }
-  #submit {
+  #submit{
     color: $Neutral900;
     border: none;
     background-color: $Orange700;
@@ -208,6 +208,14 @@ form {
     top: 3.8em;
     left: 4.2em;
   }
+}
+
+#download {
+  color: $Neutral900;
+    border: none;
+    background-color: $Orange700;
+    font: 900 1.2rem fontBody;
+  
 }
 
 .user-info {

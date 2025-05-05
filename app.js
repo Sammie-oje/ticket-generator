@@ -237,9 +237,26 @@ function generateTicket() {
           </div>
         <span id="random-num">#${randomNumbers}</span>
       </section>
-      <button>
+      <button id="download" onclick= "downloadTicket()">
        <img src="/assets/images/download.svg">
        <span>Download</span>
       </button>
     `;
+}
+
+const downloadTicket = () => {
+   const ticketSection = document.querySelector(".ticket-section");
+   
+   html2canvas(ticketSection).then(canvas => {
+     const imageData = canvas.toDataURL("image/png");
+     
+     const link = document.createElement("a");
+     link.href = imageData;
+     link.download = "ticket.png";
+     
+     link.click();
+   }).catch(err => {
+  alert("Something went wrong during the image capture!");
+  console.error("html2canvas error:", err);
+});
 }
