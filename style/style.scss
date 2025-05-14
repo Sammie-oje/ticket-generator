@@ -1,0 +1,298 @@
+@import "_variables";
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+@mixin displayFlex($justifyContent: center, $alignItems: center) {
+  display: flex;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+}
+
+@font-face {
+  font-family: fontBody;
+  src: url("/assets/fonts/Inconsolata-VariableFont_wdth,wght.ttf");
+}
+
+body {
+  color: white;
+  background: url("/assets/images/pattern-lines.svg") fixed no-repeat top/cover,
+    url("/assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg") fixed
+      no-repeat bottom left/250px auto,
+    url("/assets/images/pattern-squiggly-line-top.svg") fixed no-repeat top
+      right/100px auto,
+    url("/assets/images/pattern-circle.svg") fixed no-repeat top left/100px auto,
+    url("/assets/images/pattern-circle.svg") fixed no-repeat center right/100px
+      auto,
+    url("/assets/images/background-mobile.png") fixed no-repeat center/cover;
+  @include displayFlex;
+}
+
+main {
+  max-width: 100%;
+  padding: 2em 1em;
+  font-family: fontBody;
+  #main-img {
+    width: min(160px, 50%);
+    display: block;
+    margin: 0 auto 1.5em;
+  }
+}
+
+#hd-section {
+  text-align: center;
+  margin: 0.6em auto 1.5em;
+  h3 {
+    font: 700 2rem fontBody;
+    margin-bottom: 0.25em;
+  }
+  p {
+    font: 500 1.2rem fontBody;
+    color: $Neutral300;
+  }
+}
+
+//error placeholder style
+%error {
+  @include displayFlex($justifyContent: flex-start);
+  gap: 0.7em;
+  font: 500 0.9rem fontBody;
+  margin: 1em auto 0;
+}
+
+form {
+  margin: 0 auto;
+  max-width: 80%;
+  height: auto;
+  & > * {
+    display: block;
+  }
+  label {
+    width: 100%;
+    margin-bottom: 1.4em;
+    h4 {
+      font: 500 1.2rem fontBody;
+      margin-bottom: 0.1em;
+    }
+    .err {
+      @extend %error;
+      color: $Orange700;
+    }
+  }
+  input {
+    padding: 1em;
+    border: 1px solid $Neutral500;
+    width: 100%;
+    border-radius: 0.8em;
+    background-color: hsl(245, 19%, 35%, 0.2);
+    backdrop-filter: 5px;
+    margin: 0.6em auto 0;
+    color: $Neutral0;
+    &:hover {
+      cursor: pointer;
+      background-color: hsl(245, 19%, 35%);
+    }
+  }
+  #submit{
+    color: $Neutral900;
+    border: none;
+    background-color: $Orange700;
+    font: 900 1.2rem fontBody;
+  }
+  section {
+    margin-bottom: 1em;
+  }
+  #upload-label {
+    margin-top: 0.5em;
+    padding: 1em;
+    border: 2px dashed $Neutral500;
+    border-radius: 0.4em;
+    background-color: hsla(252, 6%, 83%, 0.2);
+    backdrop-filter: 5px;
+    &:hover {
+      cursor: pointer;
+      background-color: hsl(245, 19%, 35%, 0.7);
+    }
+    #upload {
+      display: none;
+    }
+    #input-desc {
+      font: 400 1.1rem fontBody;
+      color: $Neutral300;
+      text-align: center;
+    }
+  }
+  #upload-img-container {
+    border: 2px solid $Neutral700;
+    @include displayFlex;
+    margin: 0 auto;
+    border-radius: 0.8em;
+    width: 2.8em;
+    height: 2.8em;
+    background-color: $Neutral700;
+    #upload-icon {
+      object-fit: cover;
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+  #input-desc {
+    margin: 0.5em auto 0;
+    @include displayFlex;
+    flex-wrap: wrap;
+    gap: 0.6em;
+    .img-btn {
+      border: none;
+      border-radius: 0.3em;
+      padding: 0.4em;
+      font: 500 0.95rem fontBody;
+      color: $Neutral300;
+      background-color: hsla(252, 15%, 58%, 0.2);
+      backdrop-filter: 5px;
+      &:hover {
+        text-decoration: underline;
+        text-underline-offset: 2.5px;
+      }
+    }
+  }
+  .error-msg {
+    @extend %error;
+    color: $Neutral500;
+  }
+}
+
+//Ticket section styling
+.gradient-hd {
+  margin-top: 1.2em;
+  #gradient-text {
+    background: linear-gradient(45deg, $Orange500, $Neutral0);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.about {
+  margin: 1.2em auto 4em;
+  font-weight: 300;
+}
+
+#email-text {
+  color: $Orange500;
+}
+//Ticket section styling
+.ticket-section {
+  margin-bottom: 10em;
+  position: relative;
+  #ticket-img {
+    width: 100%;
+    height: fit-content;
+    margin: 0 auto;
+  }
+  .ticket-hd {
+    position: absolute;
+    @include displayFlex;
+    gap: 0.7em;
+    left: 1em;
+    top: 0.8em;
+    span {
+      font: 700 1.5rem fontBody;
+    }
+  }
+  #date {
+    position: absolute;
+    font: 300 0.8rem fontBody;
+    color: $Neutral300;
+    top: 3.8em;
+    left: 4.2em;
+  }
+}
+
+#download {
+  color: $Neutral900;
+    border: none;
+    background-color: $Orange700;
+    font: 900 1.2rem fontBody;
+  
+}
+
+.user-info {
+  position: absolute;
+  bottom: 1em;
+  left: 1em;
+  @include displayFlex;
+  gap: 0.6em;
+  #ticket-avatar {
+    object-fit: cover;
+    max-width: 5em;
+    max-height: 5em;
+    border-radius: 0.4em;
+  }
+}
+#info-wrapper {
+  @include displayFlex($alignItems: flex-start);
+  flex-direction: column;
+  gap: 0.2em;
+  #github-info {
+    @include displayFlex($justifyContent: flex-start);
+    gap: 0.5em;
+    font: 300 0.8rem fontBody;
+    color: $Neutral300;
+  }
+}
+
+#random-num {
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+  right: -3%;
+  transform: translate(-50%, -50%);
+  @include displayFlex;
+  transform: rotate(90deg);
+  font: 300 clamp(1rem, 1.8rem, 2.6rem) fontBody;
+  color: $Neutral500;
+}
+
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+  body {
+    background: url("/assets/images/pattern-lines.svg") fixed no-repeat
+        center/cover,
+      url("/assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg") fixed
+        no-repeat bottom left/300px auto,
+      url("/assets/images/pattern-squiggly-line-top.svg") fixed no-repeat top
+        right/180px auto,
+      url("/assets/images/pattern-circle.svg") fixed no-repeat top left/150px
+        auto,
+      url("/assets/images/pattern-circle.svg") fixed no-repeat center
+        right/150px auto,
+      url("/assets/images/background-tablet.png") fixed no-repeat center/cover;
+  }
+  .ticket-section {
+    #ticket {
+      max-width: 80%;
+    }
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  body {
+    background: url("/assets/images/pattern-lines.svg") fixed no-repeat
+        center/cover,
+      url("/assets/images/pattern-squiggly-line-bottom-desktop.svg") fixed
+        no-repeat bottom left/400px auto,
+      url("/assets/images/pattern-squiggly-line-top.svg") fixed no-repeat top
+        right/250px auto,
+      url("/assets/images/pattern-circle.svg") fixed no-repeat top left/200px
+        auto,
+      url("/assets/images/pattern-circle.svg") fixed no-repeat center
+        right/200px auto,
+      url("/assets/images/background-desktop.png") fixed no-repeat center/cover;
+  }
+  .ticket-section {
+    #ticket {
+      max-width: 80%;
+    }
+  }
+}

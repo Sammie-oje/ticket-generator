@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A ticket generator site" />
+    
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style/style.css" />
+    
+     <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <title>Frontend Mentor | Conference ticket generator</title>
+  </head>
+  <body>
+    <main>
+      <section id="hd-section">
+        <img
+          src="assets/images/logo-full.svg"
+          alt="coding conf logo"
+          id="main-img"
+        />
+        <h3>Your Journey to Coding Conf 2025 Starts Here!</h3>
+        <p>Secure your spot at next year's biggest coding conference.</p>
+      </section>
+      <!-- Form starts -->
+
+      <form action="#">
+        <section>
+          <label>
+            <h4>Upload Avatar</h4>
+            <div id="upload-label">
+              <input
+                type="file"
+                name="upload"
+                id="upload"
+                accept="image/*"
+                aria-label="Upload an avatar"
+              />
+              <span id="upload-img-container" tabindex="0">
+                <img
+                  src="assets/images/icon-upload.svg"
+                  alt="upload icon"
+                  id="upload-icon"
+                  width="32"
+                  height="32"
+                />
+              </span>
+              <p id="input-desc">Drag and drop or click to upload</p>
+            </div>
+          </label>
+          <p class="error-msg">
+            <img src="assets/images/icon-info.svg" alt="info" />
+            <span>Upload your photo (JPG or PNG, max size: 500KB).</span>
+          </p>
+        </section>
+
+        <label>
+          <h4>Full Name</h4>
+          <input type="text" aria-label="Enter your full name" id="full-name" />
+          <p id="nameErr" class="err"></p>
+        </label>
+
+        <label>
+          <h4>Email Address</h4>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="example@email.com"
+            autocomplete="email"
+          />
+          <p id="emailErr" class="err"></p>
+        </label>
+
+        <label>
+          <h4>GitHub Username</h4>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            placeholder="@yourusername"
+            autocomplete="username"
+          />
+          <p id="userErr" class="err"></p>
+        </label>
+
+        <input
+          type="submit"
+          id="submit"
+          aria-label="Submit to generate ticket"
+          value="Generate My Ticket"
+        />
+      </form>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

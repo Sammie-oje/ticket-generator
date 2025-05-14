@@ -1,0 +1,286 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+@font-face {
+  font-family: fontBody;
+  src: url("/assets/fonts/Inconsolata-VariableFont_wdth,wght.ttf");
+}
+body {
+  color: white;
+  background: url("/assets/images/pattern-lines.svg") fixed no-repeat top/cover, url("/assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg") fixed no-repeat bottom left/250px auto, url("/assets/images/pattern-squiggly-line-top.svg") fixed no-repeat top right/100px auto, url("/assets/images/pattern-circle.svg") fixed no-repeat top left/100px auto, url("/assets/images/pattern-circle.svg") fixed no-repeat center right/100px auto, url("/assets/images/background-mobile.png") fixed no-repeat center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  max-width: 100%;
+  padding: 2em 1em;
+  font-family: fontBody;
+}
+main #main-img {
+  width: min(160px, 50%);
+  display: block;
+  margin: 0 auto 1.5em;
+}
+
+#hd-section {
+  text-align: center;
+  margin: 0.6em auto 1.5em;
+}
+#hd-section h3 {
+  font: 700 2rem fontBody;
+  margin-bottom: 0.25em;
+}
+#hd-section p {
+  font: 500 1.2rem fontBody;
+  color: hsl(252, 6%, 83%);
+}
+
+form .error-msg, form label .err {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.7em; 
+  font: 500 0.9rem fontBody;
+  margin: 1em auto 0;
+}
+
+form {
+  margin: 0 auto;
+  max-width: 80%;
+  height: auto;
+}
+form > * {
+  display: block;
+}
+form label {
+  width: 100%;
+  margin-bottom: 1.4em;
+}
+form label h4 {
+  font: 500 1.2rem fontBody;
+  margin-bottom: 0.1em;
+}
+form label .err {
+  color: hsl(7, 71%, 60%);
+}
+form input {
+  padding: 1em;
+  border: 1px solid hsl(245, 15%, 58%);
+  width: 100%;
+  border-radius: 0.8em;
+  background-color: hsla(245, 19%, 35%, 0.2);
+  -webkit-backdrop-filter: 5px;
+          backdrop-filter: 5px;
+  margin: 0.6em auto 0;
+  color: hsl(0, 0%, 100%);
+}
+form input:hover {
+  cursor: pointer;
+  background-color: hsl(245, 19%, 35%);
+}
+form #submit {
+  color: hsl(248, 70%, 10%);
+  border: none;
+  background-color: hsl(7, 71%, 60%);
+  font: 900 1.2rem fontBody;
+}
+form section {
+  margin-bottom: 1em;
+}
+form #upload-label {
+  margin-top: 0.5em;
+  padding: 1em;
+  border: 2px dashed hsl(245, 15%, 58%);
+  border-radius: 0.4em;
+  background-color: hsla(252, 6%, 83%, 0.2);
+  -webkit-backdrop-filter: 5px;
+          backdrop-filter: 5px;
+}
+form #upload-label:hover {
+  cursor: pointer;
+  background-color: hsla(245, 19%, 35%, 0.7);
+}
+form #upload-label #upload {
+  display: none;
+}
+form #upload-label #input-desc {
+  font: 400 1.1rem fontBody;
+  color: hsl(252, 6%, 83%);
+  text-align: center;
+}
+form #upload-img-container {
+  border: 2px solid hsl(245, 19%, 35%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  border-radius: 0.8em;
+  width: 2.8em;
+  height: 2.8em;
+  background-color: hsl(245, 19%, 35%);
+}
+form #upload-img-container #upload-icon {
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
+}
+form #input-desc {
+  margin: 0.5em auto 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6em;
+}
+form #input-desc .img-btn {
+  border: none;
+  border-radius: 0.3em;
+  padding: 0.4em;
+  font: 500 0.95rem fontBody;
+  color: hsl(252, 6%, 83%);
+  background-color: hsla(252, 15%, 58%, 0.2);
+  -webkit-backdrop-filter: 5px;
+          backdrop-filter: 5px;
+}
+form #input-desc .img-btn:hover {
+  text-decoration: underline;
+  text-underline-offset: 2.5px;
+}
+form .error-msg {
+  color: hsl(245, 15%, 58%);
+}
+
+.gradient-hd {
+  margin-top: 1.2em;
+}
+.gradient-hd #gradient-text {
+  background: linear-gradient(45deg, hsl(7, 88%, 67%), hsl(0, 0%, 100%));
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.about {
+  margin: 1.2em auto 4em;
+  font-weight: 300;
+}
+
+#email-text {
+  color: hsl(7, 88%, 67%);
+}
+
+.ticket-section {
+  margin-bottom: 10em;
+  position: relative;
+}
+.ticket-section #ticket-img {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: 0 auto;
+}
+.ticket-section .ticket-hd {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7em;
+  left: 1em;
+  top: 0.8em;
+}
+.ticket-section .ticket-hd span {
+  font: 700 1.5rem fontBody;
+}
+.ticket-section #date {
+  position: absolute;
+  font: 300 0.8rem fontBody;
+  color: hsl(252, 6%, 83%);
+  top: 3.8em;
+  left: 4.2em;
+}
+
+#download {
+  color:hsl(248, 70%, 10%) ;
+    border: none;
+    background-color: hsl(7, 71%, 60%);
+    font: 900 1.2rem fontBody;
+    border-radius: 0.5em;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.2em 0;
+  margin: 0 auto;
+  width: min(50%, 300px);
+}
+
+
+.user-info {
+  position: absolute;
+  bottom: 1em;
+  left: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6em;
+}
+.user-info #ticket-avatar {
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-width: 5em;
+  max-height: 5em;
+  border-radius: 0.4em;
+}
+
+#info-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 0.2em;
+}
+#info-wrapper #github-info {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5em;
+  font: 300 0.8rem fontBody;
+  color: hsl(252, 6%, 83%);
+}
+
+#random-num {
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+  right: -3%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(90deg);
+  font: 300 1.8rem fontBody;
+  color: hsl(245, 15%, 58%);
+}
+
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+  body {
+    background: url("/assets/images/pattern-lines.svg") fixed no-repeat center/cover, url("/assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg") fixed no-repeat bottom left/300px auto, url("/assets/images/pattern-squiggly-line-top.svg") fixed no-repeat top right/180px auto, url("/assets/images/pattern-circle.svg") fixed no-repeat top left/150px auto, url("/assets/images/pattern-circle.svg") fixed no-repeat center right/150px auto, url("/assets/images/background-tablet.png") fixed no-repeat center/cover;
+  }
+  .ticket-section #ticket {
+    max-width: 80%;
+  }
+}
+@media only screen and (min-width: 900px) {
+  body {
+    background: url("/assets/images/pattern-lines.svg") fixed no-repeat center/cover, url("/assets/images/pattern-squiggly-line-bottom-desktop.svg") fixed no-repeat bottom left/400px auto, url("/assets/images/pattern-squiggly-line-top.svg") fixed no-repeat top right/250px auto, url("/assets/images/pattern-circle.svg") fixed no-repeat top left/200px auto, url("/assets/images/pattern-circle.svg") fixed no-repeat center right/200px auto, url("/assets/images/background-desktop.png") fixed no-repeat center/cover;
+  }
+  .ticket-section #ticket {
+    max-width: 80%;
+  }
+}/*# sourceMappingURL=style.css.map */  
